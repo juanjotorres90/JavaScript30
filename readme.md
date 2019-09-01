@@ -1,3 +1,11 @@
+## Completed! 01/09/2019
+
+
+
+Check out my solutions <a href="https://juanjotorres.net/projects/javascript30/">here</a>.
+
+
+
 ![](https://javascript30.com/images/JS3-social-share.png)
 
 # JavaScript30
