@@ -12,6 +12,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Amatic SC', cursive;
+  width: 100vw;
 }
 
 h1 {
@@ -21,19 +22,27 @@ h1 {
   margin-bottom: 0;
 }
 
-.score {
+h2 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.score, .highscore {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
   line-height: 1;
   border-radius: 1rem;
 }
 
+.highscore {
+  padding: 0 1.5rem;
+}
 .game {
   width: 600px;
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .hole {
@@ -66,4 +75,20 @@ h1 {
 
 .hole.up .mole {
   top: 0;
+}
+
+button {
+  padding: 1rem 3rem;
+  background-color: orange;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px #000;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgb(2, 80, 13);
 }

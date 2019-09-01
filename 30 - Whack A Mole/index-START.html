@@ -11,6 +11,7 @@
 <body>
 
   <h1>Whack-a-mole! <span class="score">0</span></h1>
+  <h2>Best: <span class="highscore">0</span></h2>
   <button onClick="startGame()">Start!</button>
 
   <div class="game">
@@ -38,9 +39,12 @@
     const holes = document.querySelectorAll('.hole');
     const scoreBoard = document.querySelector('.score');
     const moles = document.querySelectorAll('.mole');
+    const highScoreBoard = document.querySelector('.highscore');
     let lastHole;
     let timeUp = false;
     let score = 0;
+    let highScore = localStorage.getItem('highscore');
+    highScoreBoard.textContent = highScore;
 
     function randomTime(min, max) {
       return Math.round(Math.random() * (max - min) + min);
@@ -79,6 +83,12 @@
       score++;
       this.classList.remove('up');
       scoreBoard.textContent = score;
+
+      if (score > highScore) {
+        localStorage.setItem('highscore', score);
+        highScore = localStorage.getItem('highscore');
+        highScoreBoard.textContent = highScore;
+      }
     }
 
     moles.forEach(mole => mole.addEventListener('click', bonk));
